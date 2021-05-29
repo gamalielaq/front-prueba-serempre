@@ -1,0 +1,14 @@
+.footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #F5F5F7 0% 0% no-repeat padding-box;
+    padding: 2.5rem 0;
+    border-top: 1px solid #D2D2D7;
+}
+
+@media screen and(min-width: 1200px) {
+    .footer {
+        position: fixed;
+    }
+}

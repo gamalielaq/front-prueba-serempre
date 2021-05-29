@@ -1,11 +1,12 @@
 .header {
-    position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 999;
     background: #ffffff;
-    .container {
+    .container div{
         border-bottom: 1px solid #D2D2D7;
     }
 }
+
+    

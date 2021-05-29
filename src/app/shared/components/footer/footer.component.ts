@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProducService } from '../../../services/product.service';
+
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  @Input() total: number;
+  constructor(
+    public _productService: ProducService
+  ) { }
 
   ngOnInit(): void {
+    this._productService.total$.subscribe((res: any)   => {
+      this.total = res;
+    })
   }
 
 }

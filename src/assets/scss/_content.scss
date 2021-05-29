@@ -1,9 +1,57 @@
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #F5F5F7 0% 0% no-repeat padding-box;
-    padding: 2.5rem 0;
-    border-top: 1px solid #D2D2D7;
+.card.c-events {
+    border: 2px solid #EEEFF2;
+    cursor: pointer;
+}
+.card.c-events:hover {
+    transition: 0.5s;
+    border: 2px solid #B6BCC6;
+}
+.card.active {
+    border: 2px solid #000000;
+}
+.card.active.info {
+    border: 2px solid #1E96D4;
+}
+.card.c-events:hover {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0.01rem #B6BCC6;
+}
+//buttons
+.btn-primary {
+    height: 45px;
+    border-radius: 8px;
+    font-size: 14px;
+    border-color: #1E96D4; 
+    background: #1E96D4;
+}
+.btn-primary:hover {
+    background: #66BEEB !important;
+    border-color: #66BEEB !important;
+}
+
+//tables
+table {
+    font-size: 12px;
+}
+.table>:not(caption)>*>* {
+    padding: 0.8rem 0.5rem !important;
+}
+
+//icons
+.icon-hand::after {
+    content: url(../img/icons/hand.png);
+}
+.icon-shape::after {
+    content: url(../img/icons/shape.png);
+}
+.icon-combinedShape::after {
+    content: url(../img/icons/combined-shape.png);
+}
+
+//
+@media screen and(min-width:768px) and(max-width:992px){
+    .container {
+        max-width: 615px;
+    }
 }

@@ -1,7 +1,31 @@
-<div class="container" style="margin-bottom: 8rem;">
+<div class="container mb-8rem">
     <div class="row">
-        <div class="col-xl-6 mb-4">
-           <app-slide-show [fixed]="true"></app-slide-show>
+        <div class="col-xl-6 mb-3">
+            <div class="sticky-lg-block">
+                <div class="mb-4">
+                    <app-slide-show [slides]="slides"></app-slide-show>
+                </div><br>
+                <div class="row gx-3 mt-3 d-none d-sm-flex">
+                    <div class="col-4 p-2">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <i class="icon-hand mb-2"></i>
+                            <span class="text-center fs-13">Customizable Touch Controls </span>
+                        </div>
+                    </div>
+                    <div class="col-4 p-2">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <i class="icon-shape mb-2"></i>
+                            <span class="text-center fs-13">Built-in Equalizer</span>
+                        </div>
+                    </div>
+                    <div class="col-4 p-2">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <i class="icon-combinedShape mb-2"></i>
+                            <span class="text-center fs-13">Active Noise Cancellation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-xl-6">
             <p class="m-0 sub-title red"> NEW RELEASE </p>
@@ -14,112 +38,15 @@
 
             <div class="tab">
                 <ul class="tab-list">
-                    <li class="tab-item">
-                        <span href="">Overview</span>
-                    </li>
-                    <li class="tab-item active">
-                        <span href="">Features</span>
-                    </li>
-                    <li class="tab-item">
-                        <span href="">What's in the box?</span>
+                    <li class="tab-item" *ngFor="let tab of itemsTabs; index as i" (click)="selectedTab(tab)"
+                        [ngClass]="{'active': i == activeIndex? true : false}">
+                        <span>{{tab.label}}</span>
                     </li>
                 </ul>
                 <div class="tab-content">
-                    For the past 75 years, Sennheiser has put sound first. The new MOMENTUM True Wireless 2 is no
-                    different. Thanks to leading audio technology and innovation, these new earbuds deliver the best
-                    listening experience anytime, anywhere. With improved ergonomics designed for full day wearing and
-                    refined touch controls for a more personalised experience, they have been finely crafted for the
-                    most discerning listener and aim to simplify your life by enhancing your everyday.
-                </div>
-            </div>
-            <br><br><br><br>
-
-            <p> Choose your finish.</p>
-            <div class="row gx-3">
-                <div class="col-12 col-xl-6">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <p class="sub-title black mb-1">Ivory White</p>
-                            <p class="gray fs-13 m-0">
-                                For the past 75 years, Sennheiser has put sound first. The new MOMENTUM True.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-xl-6">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <p class="sub-title black mb-1">Ivory White</p>
-                            <p class="gray fs-13 m-0">
-                                For the past 75 years, Sennheiser has put sound first. The new MOMENTUM True.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p class="mb-1">Would you like to add extended warranty coverage?.</p>
-            <div class="row">
-                <div class="col-12 col-xl-12">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <p class="sub-title black mb-1">Ivory White</p>
-                            <p class="gray fs-13 m-0">
-                                For the past 75 years, Sennheiser has put sound first. The new MOMENTUM True.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-xl-12">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <p class="sub-title black mb-1">Ivory White</p>
-                            <p class="gray fs-13 m-0">
-                                For the past 75 years, Sennheiser has put sound first. The new MOMENTUM True.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br> <br>
-            <p class="mb-1">Features.</p>
-            <div class="row">
-                <div class="col-12 col-xl-12">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <p class="sub-title black mb-1">Ivory White</p>
-                                <span>+ $25</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-xl-12">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <p class="sub-title black mb-1">Ivory White</p>
-                            <p class="gray fs-13 m-0">
-                                For the past 75 years, Sennheiser has put sound first. The new MOMENTUM True.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-3">
-                <span class="sub-title gray">Free Shipping</span>
-            </div>
-            <div class="col-xl-3">
-                <span class="sub-title gray">Get 2-day free shipping anywhere in North America.</span>
-            </div>
-            <div class="col-xl-6">
-                <div class="d-flex justify-content-end h-100">    
-                    <button class="btn btn-primary">Buy now</button>
+                    <app-overview *ngIf="activeIndex == 0"></app-overview>
+                    <app-features *ngIf="activeIndex == 1"></app-features>
+                    <app-box *ngIf="activeIndex == 2"></app-box>
                 </div>
             </div>
         </div>
