@@ -1,9 +1,9 @@
 # FrontPruebaSerempre
 
 
-Publica en el siguiente enlace: 
+Publicado en el siguiente enlace: 
 ##
-(https://gamalielaq.github.io/front-prueba-serempre/#/home)
+url: (https://gamalielaq.github.io/front-prueba-serempre/#/home)
 
 
 ## Development server
