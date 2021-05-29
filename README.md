@@ -6,26 +6,15 @@ Publicado en el siguiente enlace:
 url: (https://gamalielaq.github.io/front-prueba-serempre/#/home)
 
 
-## Development server
+## Development
+El proyecto estuvo intutuitivo e interesante, mi solución fue:
+Realizar el maquetado teniendo en cuenta los detalles del diseño 100% responsivo. Luego hice la estructura de mi proyecto dividido en capetas tanto para los modelos, servicios, componentes, etc... totalmente escalable pensando a un fututo y en la cantidad de programadores que podrían estar en el proyecto.
+Seguidamente analizar la logica de mi app, dividido en 4 componentes principales
+	-header,
+	-caorusel,
+	-detail,
+	-footer,
+a excepción del detalle que tendría sub componentes para el contenido de cada tab.
+De esta manera tendría todo listo y era integrar la comunicación entre ellos, en este caso en el componente footer esta atento a la escucha de cualquier evento para mostrar el precio total.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
