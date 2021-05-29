@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { ProducService } from './services/product.service'
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,10 @@ import { ProducService } from './services/product.service'
     AppRoutingModule,
     PagesModule
   ],
-  providers: [ ProducService ],
+  providers: [ 
+    ProducService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
