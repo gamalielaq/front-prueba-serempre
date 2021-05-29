@@ -7,10 +7,9 @@ const routes: Routes = [
     path: '', component: ContentComponent,
     children: [
       {
-        path: 'home',
+        path: '',
         loadChildren: () => import('./../pages/pages.module').then((m) => m.PagesModule)
-      },
-      { path: '**', redirectTo: '/home'}
+      }
     ],
   },
 ];
